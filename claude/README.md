@@ -74,10 +74,10 @@ Claude Code turns specs into working code. Point it at a requirement (Notion PRD
 | Account | `/usage` | Show plan usage limits |
 | Account | `/upgrade` | Upgrade to Max for higher rate limits |
 | Settings | `/model` | Set the AI model for Claude Code |
-| Settings | `/output-style` | Set the output style |
-| Settings | `/statusline` | Set up Claude Code's status line UI |
+| Settings | `/output-style` | Set the output style (see below) |
+| Settings | `/statusline` | Set up Claude Code's status line UI (see below) |
 | Settings | `/terminal-setup` | Install Shift+Enter key binding for newlines |
-| Settings | `/remote-env` | Configure default remote environment for teleport |
+| Settings | `/remote-env` | Configure default remote environment for teleport (see below) |
 | Info | `/help` | Show help and available commands |
 | Info | `/status` | Show version, model, account, API connectivity |
 | Info | `/doctor` | Diagnose and verify installation and settings |
@@ -256,6 +256,36 @@ Fetches comments from a GitHub PR into your Claude session. See review feedback 
 - `/pr-comments 123` — get comments from PR #123
 
 **When to use:** Addressing reviewer feedback while staying in your terminal workflow.
+
+### About `/output-style`
+
+Changes how Claude responds. Different styles completely replace the default system prompt.
+
+**Available styles:**
+- **Default** — Standard software engineering mode (scripts, files, TODOs)
+- **Explanatory** — Adds educational insights about implementation choices
+- **Learning** — Collaborative mode where Claude asks you to write small code pieces
+
+**Usage:** `/output-style` (menu) or `/output-style explanatory` (direct)
+
+### About `/statusline`
+
+Configures the status bar at the bottom of Claude Code. Shows session info like model name, cost, working directory.
+
+**Setup options:**
+- `/statusline show model name in orange` — interactive configuration
+- Custom script in `settings.json` that receives session data as JSON
+
+**Example** (in `settings.json`):
+```json
+{"statusLine": {"type": "command", "command": "~/.claude/statusline.sh"}}
+```
+
+### About `/remote-env`
+
+Configures default remote environment for teleport — running Claude Code on a remote machine while controlling it locally.
+
+**When to use:** Working with codebases on remote servers, cloud VMs, or containers without copying files locally.
 
 ## Quick Reference
 
