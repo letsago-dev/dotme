@@ -2,12 +2,12 @@
 
 > Claude understands your codebase, makes edits with your permission, and executes commands — right from your terminal.
 
+## Getting Help
+
+- **?** — Show Claude help
+- **/help** — See available commands and tips
+
 ## Quick Reference
-
-- **Shift+Tab**: Cycle between edit mode and plan mode
-- **?**: Show Claude help
-
-### When and How to Use
 
 | Feature | When | How | Example |
 |---------|------|-----|---------|
@@ -19,20 +19,11 @@
 | **Subagents** | Focused analysis, investigation | Claude launches via Task tool | Explore, Plan |
 | **Zen MCP** | Deep analysis, consensus | `mcp__zen__` tools | Multi-model consensus |
 
-## Getting Help
+## Plan vs Edit Modes
 
-Type `/help` in any Claude session to see available commands and tips.
+Toggle with **shift + tab**.
 
-## Prompting Tips
-
-### Input Controls
-- **shift + ⏎**: Insert newline in your prompt (multi-line input)
-- **shift + tab**: Switch between plan mode and edit mode
-- **double tap esc**: Clear input field
-
-### Plan vs Edit Modes
-
-**Plan Mode** (shift + tab to activate):
+**Plan Mode**:
 - Claude researches and plans before executing
 - Reviews approach with you first
 - Best for: complex tasks, exploration, when unsure
@@ -42,7 +33,12 @@ Type `/help` in any Claude session to see available commands and tips.
 - Makes changes as you request
 - Best for: clear instructions, known workflows
 
-### Undo and Control
+## Input Controls
+
+- **shift + ⏎**: Insert newline in your prompt (multi-line input)
+- **double tap esc**: Clear input field
+
+## Undo and Control
 - **ctrl + _**: Undo last action
   - Reverts the most recent file change or operation
   - Works like editor undo, can be repeated
@@ -52,7 +48,7 @@ Type `/help` in any Claude session to see available commands and tips.
   - Use `fg` to resume the Claude session
   - Different from `/exit` - doesn't terminate Claude
 
-### Output and Input
+## Output and Input
 - **ctrl + o**: Toggle verbose output
   - Shows detailed information about what Claude is doing
   - Useful for debugging or understanding Claude's process
@@ -63,7 +59,7 @@ Type `/help` in any Claude session to see available commands and tips.
   - Enables vim keybindings in the input area
   - For vim users who want familiar navigation
 
-### Workflow Controls
+## Workflow Controls
 - **ctrl + t**: Show todos
   - Displays current task list
   - See what Claude is tracking and working on
