@@ -2,6 +2,23 @@
 
 > Claude understands your codebase, makes edits with your permission, and executes commands — right from your terminal.
 
+## Quick Reference
+
+- **Shift+Tab**: Cycle between edit mode and plan mode
+- **?**: Show Claude help
+
+### When and How to Use
+
+| Feature | When | How | Example |
+|---------|------|-----|---------|
+| **Commands** | Typing same instructions repeatedly | `.claude/commands/name.md` | Code review checklist |
+| **Memories** | Remember project-specific info | Tell Claude "remember that..." | Architecture decisions |
+| **Prompts** | Occasional complex instructions | `.claude/prompts/name.md` | PR description template |
+| **Skills** | Complex multi-step tasks | `skill-name/SKILL.md` with frontmatter | PDF processing |
+| **Personas** | Domain-specific guidance | `.claude/agents/name.md` | Security auditor, Python coach |
+| **Subagents** | Focused analysis, investigation | Claude launches via Task tool | Explore, Plan |
+| **Zen MCP** | Deep analysis, consensus | `mcp__zen__` tools | Multi-model consensus |
+
 ## Getting Help
 
 Type `/help` in any Claude session to see available commands and tips.
