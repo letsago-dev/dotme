@@ -5,7 +5,46 @@
 ## Getting Help
 
 - **?** — Show Claude help
-- **/help** — See available commands and tips
+- **/help** — See available commands:
+
+| Group | Command | What it does |
+|-------|---------|--------------|
+| Project | `/add-dir` | Add a new working directory |
+| Project | `/context` | Visualize current context usage as a colored grid |
+| Project | `/init` | Initialize a new CLAUDE.md file with codebase documentation |
+| Session | `/clear` | Clear conversation history and free up context |
+| Session | `/compact` | Clear history but keep a summary (optional: `/compact [instructions]`) |
+| Session | `/exit` | Exit the REPL |
+| Session | `/resume` | Resume a conversation |
+| Session | `/rewind` | Restore code and/or conversation to a previous point |
+| Session | `/plan` | View or open the current session plan |
+| Tasks | `/tasks` | List and manage background tasks |
+| Tasks | `/todos` | List current todo items |
+| Tools | `/agents` | Manage agent configurations |
+| Tools | `/hooks` | Manage hook configurations for tool events |
+| Tools | `/mcp` | Manage MCP servers |
+| Tools | `/plugin` | Manage Claude Code plugins |
+| Tools | `/ide` | Manage IDE integrations and show status |
+| Tools | `/vim` | Toggle between Vim and Normal editing modes |
+| Security | `/permissions` | Manage allow & deny tool permission rules |
+| Security | `/sandbox` | Configure sandbox mode |
+| Review | `/review` | Review a pull request |
+| Review | `/pr-comments` | Get comments from a GitHub pull request |
+| Account | `/login` | Sign in with your Anthropic account |
+| Account | `/logout` | Sign out from your Anthropic account |
+| Account | `/usage` | Show plan usage limits |
+| Account | `/upgrade` | Upgrade to Max for higher rate limits |
+| Settings | `/model` | Set the AI model for Claude Code |
+| Settings | `/output-style` | Set the output style |
+| Settings | `/statusline` | Set up Claude Code's status line UI |
+| Settings | `/terminal-setup` | Install Shift+Enter key binding for newlines |
+| Settings | `/remote-env` | Configure default remote environment for teleport |
+| Info | `/help` | Show help and available commands |
+| Info | `/status` | Show version, model, account, API connectivity |
+| Info | `/doctor` | Diagnose and verify installation and settings |
+| Info | `/release-notes` | View release notes |
+| Info | `/export` | Export conversation to a file or clipboard |
+| Info | `/feedback` | Submit feedback about Claude Code |
 
 ## Quick Reference
 
@@ -104,36 +143,6 @@ Execute built-in or custom commands.
 
 **Built-in**: `/help`, `/agents`, `/memory`
 **Custom**: `/your-command` (from `.claude/commands/`)
-
-## Built-In Commands
-
-| Group | Command | What it does | When to use |
-|-------|---------|--------------|-------------|
-| Project | `/add-dir` | Add directories to context | Working across multiple dirs |
-| Project | `/context` | Show current context | See what Claude can access |
-| Session | `/clear` | Clear history, keep session | Start fresh discussion |
-| Session | `/exit` | Terminate session | Done working |
-| Session | `/compact` | Compress history | Long sessions, token limits |
-| Execution | `/bashes` | List background processes | See what's still running |
-| Execution | `/resume` | Resume previous session | Continue earlier work |
-| Execution | `/rewind` | Go back in conversation | Undo multiple steps |
-| Tools | `/agents` | Manage custom agents | Need domain expert, reviewer |
-| Tools | `/hooks` | Configure event-triggered scripts | Auto-logging, validation |
-| Tools | `/mcp` | Manage MCP servers | Connect external tools |
-| Tools | `/plugin` | Manage plugins | Extend functionality |
-| Tools | `/vim` | Configure vim integration | Editor setup |
-| Memory | `/memory` | View/manage memories | Review or remove stored context |
-| Memory | `/todos` | View task list (also `ctrl+t`) | See what Claude is tracking |
-| Security | `/permissions` | Manage file/command permissions | Control Claude's access |
-| Security | `/sandbox` | Enable/disable sandbox | Restrict actions for safety |
-| Security | `/securityreview` | Security-focused code review | Audit for vulnerabilities |
-| Review | `/review` | Comprehensive code review | Pre-commit quality check |
-| Review | `/init` | Initialize Claude in project | First-time repo setup |
-| UI | `/statusline` | Configure status line | Customize status bar |
-| UI | `/export` | Export conversation | Save or share discussion |
-| UI | `/usage` | Show token stats | Monitor API usage, costs |
-
-See also: `agents/README.md`, `hooks/README.md`
 
 ## Zen MCP Tools
 
