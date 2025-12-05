@@ -96,6 +96,18 @@ Expands Claude's context beyond your current working directory. By default, Clau
 
 **Example:** `/add-dir ../backend` — now Claude can read files there (e.g., `@../backend/src/api.py`)
 
+### About `/init`
+
+Bootstraps a `CLAUDE.md` file for your project. Claude analyzes your codebase and generates project-specific context including build commands, code style conventions, and architecture notes.
+
+**What it detects:**
+- Package managers (package.json, pyproject.toml, Gemfile)
+- Build tools (Makefile, Dockerfile, docker-compose)
+- Test frameworks and lint configs
+- Project structure patterns
+
+**Scope:** Creates a *project-level* CLAUDE.md in the current directory, separate from your global `~/.claude/CLAUDE.md`.
+
 ### About `/resume`
 
 When you exit Claude (`/exit` or close terminal), your conversation history is saved. Next time you run `claude`, you start fresh. Use `/resume` to pick up where you left off — same context, same files discussed, same task progress.
