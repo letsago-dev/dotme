@@ -272,11 +272,29 @@ Changes how Claude responds. Different styles completely replace the default sys
 
 Configures the status bar at the bottom of Claude Code. Shows session info like model name, cost, working directory.
 
+**What it looks like:**
+```
+/Users/fabio/.me [main] | Opus 4.5 | default
+```
+
 **Setup options:**
 - `/statusline show model name in orange` — interactive configuration
 - Custom script in `settings.json` that receives session data as JSON
 
-**Example** (in `settings.json`):
+**Example script** (`~/.claude/statusline.sh`):
+```bash
+#!/bin/bash
+# Receives JSON via stdin with: cwd, gitBranch, model, outputStyle, etc.
+INPUT=$(cat)
+CWD=$(echo "$INPUT" | jq -r '.cwd')
+BRANCH=$(echo "$INPUT" | jq -r '.gitBranch // empty')
+MODEL=$(echo "$INPUT" | jq -r '.model' | sed 's/claude-//' | sed 's/-[0-9]*$//')
+STYLE=$(echo "$INPUT" | jq -r '.outputStyle')
+
+echo "$CWD${BRANCH:+ [$BRANCH]} | $MODEL | $STYLE"
+```
+
+**Configuration** (in `settings.json`):
 ```json
 {"statusLine": {"type": "command", "command": "~/.claude/statusline.sh"}}
 ```
