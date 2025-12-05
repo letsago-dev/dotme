@@ -59,7 +59,7 @@ Claude Code turns specs into working code. Point it at a requirement (Notion PRD
 | Session | `/plan` | View or open the current session plan |
 | Tasks | `/tasks` | List and manage background tasks |
 | Tasks | `/todos` | List current todo items |
-| Tools | `/agents` | Manage agent configurations |
+| Tools | `/agents` | Manage agent configurations (see below) |
 | Tools | `/hooks` | Manage hook configurations for tool events |
 | Tools | `/mcp` | Manage MCP servers |
 | Tools | `/plugin` | Manage Claude Code plugins |
@@ -115,6 +115,23 @@ When you exit Claude (`/exit` or close terminal), your conversation history is s
 ### About `/rewind`
 
 Rolls back both code AND conversation to an earlier checkpoint. Unlike `ctrl + _` (which undoes the last file edit), `/rewind` goes back to a previous point in the entire session — undoing multiple file changes and removing conversation history after that point. Use when Claude went down a wrong path and you want to try a different approach.
+
+### About `/agents`
+
+Manages specialized AI personas stored in `.claude/agents/`. Agents are domain experts (security auditor, Python coach, architecture reviewer) that provide consistent, role-based guidance.
+
+**What `/agents` does:**
+- List available agents
+- Create new agents interactively
+- Edit or delete existing agents
+
+**When to use agents:**
+- Security audits with OWASP expertise
+- Code reviews with consistent standards
+- Mentoring with specific teaching style
+- Domain analysis (performance, accessibility, etc.)
+
+**Location:** `~/.claude/agents/*.md` (see `agents/README.md` for format)
 
 ## Quick Reference
 
