@@ -107,70 +107,33 @@ Execute built-in or custom commands.
 
 ## Built-In Commands
 
-### Project Management
+| Group | Command | What it does | When to use |
+|-------|---------|--------------|-------------|
+| Project | `/add-dir` | Add directories to context | Working across multiple dirs |
+| Project | `/context` | Show current context | See what Claude can access |
+| Session | `/clear` | Clear history, keep session | Start fresh discussion |
+| Session | `/exit` | Terminate session | Done working |
+| Session | `/compact` | Compress history | Long sessions, token limits |
+| Execution | `/bashes` | List background processes | See what's still running |
+| Execution | `/resume` | Resume previous session | Continue earlier work |
+| Execution | `/rewind` | Go back in conversation | Undo multiple steps |
+| Tools | `/agents` | Manage custom agents | Need domain expert, reviewer |
+| Tools | `/hooks` | Configure event-triggered scripts | Auto-logging, validation |
+| Tools | `/mcp` | Manage MCP servers | Connect external tools |
+| Tools | `/plugin` | Manage plugins | Extend functionality |
+| Tools | `/vim` | Configure vim integration | Editor setup |
+| Memory | `/memory` | View/manage memories | Review or remove stored context |
+| Memory | `/todos` | View task list (also `ctrl+t`) | See what Claude is tracking |
+| Security | `/permissions` | Manage file/command permissions | Control Claude's access |
+| Security | `/sandbox` | Enable/disable sandbox | Restrict actions for safety |
+| Security | `/securityreview` | Security-focused code review | Audit for vulnerabilities |
+| Review | `/review` | Comprehensive code review | Pre-commit quality check |
+| Review | `/init` | Initialize Claude in project | First-time repo setup |
+| UI | `/statusline` | Configure status line | Customize status bar |
+| UI | `/export` | Export conversation | Save or share discussion |
+| UI | `/usage` | Show token stats | Monitor API usage, costs |
 
-| Command | What it does | When to use |
-|---------|--------------|-------------|
-| `/add-dir` | Add directories to Claude's context | Working across multiple directories |
-| `/context` | Show current context (files, dirs, settings) | Understand what Claude can see |
-
-### Session Control
-
-| Command | What it does | When to use |
-|---------|--------------|-------------|
-| `/clear` | Clear history, keep session | Start fresh discussion |
-| `/exit` | Terminate session | Done working |
-| `/compact` | Compress history | Long sessions, token limits |
-
-### Execution Management
-
-| Command | What it does | When to use |
-|---------|--------------|-------------|
-| `/bashes` | List background bash processes | See what's still running |
-| `/resume` | Resume previous session | Continue earlier work |
-| `/rewind` | Go back in conversation | Undo multiple steps |
-
-### Tools and Integrations
-
-| Command | What it does | When to use |
-|---------|--------------|-------------|
-| `/agents` | Manage custom agents | Need domain expert, reviewer |
-| `/hooks` | Configure event-triggered scripts | Auto-logging, validation |
-| `/mcp` | Manage MCP servers | Connect external tools |
-| `/plugin` | Manage plugins | Extend functionality |
-| `/vim` | Configure vim integration | Editor setup |
-
-See: `agents/README.md`, `hooks/README.md`
-
-### Memory and State
-
-| Command | What it does | When to use |
-|---------|--------------|-------------|
-| `/memory` | View/manage memories | Review or remove stored context |
-| `/todos` | View task list (also `ctrl+t`) | See what Claude is tracking |
-
-### Security and Permissions
-
-| Command | What it does | When to use |
-|---------|--------------|-------------|
-| `/permissions` | Manage file/command permissions | Control Claude's access |
-| `/sandbox` | Enable/disable sandbox | Restrict actions for safety |
-| `/securityreview` | Security-focused code review | Audit for vulnerabilities |
-
-### Analysis and Review
-
-| Command | What it does | When to use |
-|---------|--------------|-------------|
-| `/review` | Comprehensive code review | Pre-commit quality check |
-| `/init` | Initialize Claude in project | First-time repo setup |
-
-### Display and UI
-
-| Command | What it does | When to use |
-|---------|--------------|-------------|
-| `/statusline` | Configure status line | Customize status bar |
-| `/export` | Export conversation | Save or share discussion |
-| `/usage` | Show token stats | Monitor API usage, costs |
+See also: `agents/README.md`, `hooks/README.md`
 
 ## Zen MCP Tools
 
