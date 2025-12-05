@@ -62,7 +62,7 @@ Claude Code turns specs into working code. Point it at a requirement (Notion PRD
 | Tools | `/agents` | Manage agent configurations (see below) |
 | Tools | `/hooks` | Manage hook configurations for tool events (see below) |
 | Tools | `/mcp` | Manage MCP servers |
-| Tools | `/plugin` | Manage Claude Code plugins |
+| Tools | `/plugin` | Manage Claude Code plugins (see below) |
 | Tools | `/ide` | Manage IDE integrations and show status |
 | Tools | `/vim` | Toggle between Vim and Normal editing modes |
 | Security | `/permissions` | Manage allow & deny tool permission rules |
@@ -154,6 +154,30 @@ Configures shell commands that run automatically on Claude Code events. Hooks en
 - Trigger external notifications
 
 **Location:** `~/.claude/settings.json` (see `hooks/README.md` for examples)
+
+### About `/plugin`
+
+Manages Claude Code plugins — shareable packages that bundle commands, agents, skills, hooks, and MCP servers.
+
+**What `/plugin` does:**
+- Discover plugins from marketplaces
+- Install, enable, disable, uninstall plugins
+- Register custom marketplaces
+
+**Plugin structure:**
+```
+.claude-plugin/
+├── plugin.json      # Metadata (name, version, description)
+├── commands/        # Slash commands
+├── agents/          # Specialized personas
+├── skills/          # Multi-step workflows
+└── hooks/           # Event automation
+```
+
+**Use cases:**
+- Share your Claude setup with teammates
+- Install community extensions
+- Package project-specific tooling
 
 ## Quick Reference
 
