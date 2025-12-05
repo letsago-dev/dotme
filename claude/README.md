@@ -19,19 +19,13 @@
 | **Subagents** | Focused analysis, investigation | Claude launches via Task tool | Explore, Plan |
 | **Zen MCP** | Deep analysis, consensus | `mcp__zen__` tools | Multi-model consensus |
 
-## Plan vs Edit Modes
+## Plan vs Edit Modes (shift + tab)
 
-Toggle with **shift + tab**.
+Claude Code turns specs into working code. Point it at a requirement (Notion PRD, Linear issue, GitHub issue), and it will analyze the spec, explore the codebase, and build a plan. Once you approve the plan, it implements the changes, runs tests, and commits.
 
-**Plan Mode**:
-- Claude researches and plans before executing
-- Reviews approach with you first
-- Best for: complex tasks, exploration, when unsure
+**Plan Mode**: Claude reads specs, inspects the codebase, and asks clarifying questions until the solution is clear. It writes a step-by-step implementation plan (saved to `.claude/`) but makes no changes. When ready, Claude prompts you to switch to Edit Mode.
 
-**Edit Mode** (default):
-- Claude executes immediately
-- Makes changes as you request
-- Best for: clear instructions, known workflows
+**Edit Mode**: Claude implements the plan — adds, refactors, and removes code, runs tests, and commits changes.
 
 ## Input Controls
 
