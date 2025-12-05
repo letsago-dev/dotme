@@ -65,7 +65,7 @@ Claude Code turns specs into working code. Point it at a requirement (Notion PRD
 | Tools | `/plugin` | Manage Claude Code plugins (see below) |
 | Tools | `/ide` | Manage IDE integrations and show status (see below) |
 | Tools | `/vim` | Toggle between Vim and Normal editing modes |
-| Security | `/permissions` | Manage allow & deny tool permission rules |
+| Security | `/permissions` | Manage allow & deny tool permission rules (see below) |
 | Security | `/sandbox` | Configure sandbox mode (see below) |
 | Review | `/review` | Review a pull request |
 | Review | `/pr-comments` | Get comments from a GitHub pull request |
@@ -193,6 +193,25 @@ Shows status and manages IDE integrations. Claude Code can connect to editors fo
 - Access lint/syntax errors for better context
 
 **Activation:** Runs automatically when you launch `claude` from your IDE's integrated terminal.
+
+### About `/permissions`
+
+Controls which tools Claude can use without asking. Tired of approving the same commands? Allow them. Want to block something dangerous? Deny it.
+
+**Three levels:**
+- **Allow** — Claude runs it without asking (e.g., `Bash(git status:*)`)
+- **Ask** — Claude asks every time (default for most tools)
+- **Deny** — Claude can't use it at all (e.g., `Bash(rm -rf:*)`)
+
+**Examples:**
+```
+Allow: Bash(npm test:*)      → run any npm test command
+Allow: Bash(git:*)           → run any git command
+Deny:  Bash(rm -rf:*)        → block recursive deletes
+Allow: Read(~/.me/**)        → read anything in .me
+```
+
+**Where rules live:** `~/.claude/settings.json` or project-level `.claude/settings.json`
 
 ### About `/sandbox`
 
