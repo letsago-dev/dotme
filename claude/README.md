@@ -66,7 +66,7 @@ Claude Code turns specs into working code. Point it at a requirement (Notion PRD
 | Tools | `/ide` | Manage IDE integrations and show status (see below) |
 | Tools | `/vim` | Toggle between Vim and Normal editing modes |
 | Security | `/permissions` | Manage allow & deny tool permission rules |
-| Security | `/sandbox` | Configure sandbox mode |
+| Security | `/sandbox` | Configure sandbox mode (see below) |
 | Review | `/review` | Review a pull request |
 | Review | `/pr-comments` | Get comments from a GitHub pull request |
 | Account | `/login` | Sign in with your Anthropic account |
@@ -193,6 +193,25 @@ Shows status and manages IDE integrations. Claude Code can connect to editors fo
 - Access lint/syntax errors for better context
 
 **Activation:** Runs automatically when you launch `claude` from your IDE's integrated terminal.
+
+### About `/sandbox`
+
+Configures sandbox mode — OS-level isolation that restricts Claude's filesystem and network access for safer execution.
+
+**What sandbox provides:**
+- Filesystem isolation (can't modify `~/.bashrc`, system binaries, etc.)
+- Network isolation (only approved domains)
+- Fewer permission prompts (trust boundaries set upfront)
+
+**How it works:**
+- Uses bubblewrap (Linux) or Seatbelt (macOS) to isolate child processes
+- Default boundary: your current working directory
+- Violations trigger notifications with deny/allow options
+
+**Configuration** (in `settings.json`):
+- Filesystem rules (read/write paths)
+- Network domains (approved hosts)
+- `allowUnsandboxedCommands` for escape hatch
 
 ## Quick Reference
 
