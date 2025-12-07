@@ -33,16 +33,45 @@ Your `.me` becomes your **developer identity**:
 
 ## Quick Start
 
-**1. Create your own repo from the template**
-
-[![Use this template](archive/template.png)](https://github.com/letsago-dev/dotme)
-
-**2. Clone and activate**
+First, [fork letsago-dev/dotme](https://github.com/letsago-dev/dotme/fork) on GitHub.
 
 ```bash
-git clone git@github.com:<your-username>/<your-repo-name>.git ~/.me
+# 1. Clone your fork as your avatar
+git clone git@github.com:YOUR_USERNAME/dotme.git ~/.me
 cd ~/.me
+
+# 2. Add upstream for updates
+git remote add upstream https://github.com/letsago-dev/dotme.git
+
+# 3. Activate
 ./itsame
+```
+
+Your fork's `main` branch IS your avatar. See [Receiving Updates](#receiving-updates) when upstream has improvements you want.
+
+## Receiving Updates
+
+When letsago/dotme has improvements you want:
+
+```bash
+cd ~/.me
+git pull upstream main
+git push
+```
+
+## Contributing Back
+
+If you create something useful for everyone:
+
+```bash
+cd ~/.me
+git checkout -b feature/my-improvement
+
+# Make changes, commit, push
+git push -u origin feature/my-improvement
+
+# Open PR from your fork to letsago-dev/dotme
+git checkout main
 ```
 
 ## Structure
